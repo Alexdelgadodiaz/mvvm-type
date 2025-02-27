@@ -13,7 +13,7 @@ struct ItemDetailView: View {
 
     var body: some View {
         ZStack {
-            // Fondo general
+            // Fondo que se adapta a dark/light mode
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea()
             
@@ -31,7 +31,8 @@ struct ItemDetailView: View {
                     Spacer()
                 }
                 .padding()
-                .background(Color.white)
+                // Se utiliza un fondo dinámico para el contenedor
+                .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(12)
                 .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
                 .padding()

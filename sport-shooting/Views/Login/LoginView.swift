@@ -14,10 +14,29 @@ struct LoginView: View {
 
     @StateObject private var viewModel = LoginViewModel()
 
+    // Color dinámico para el fondo del formulario
+    private var formBackground: Color {
+        Color(UIColor { traitCollection in
+            traitCollection.userInterfaceStyle == .dark
+            ? UIColor.secondarySystemBackground
+            : UIColor.systemGray4
+        })
+    }
+    
+    // Color dinámico para el fondo de los textfields
+    private var textFieldBackground: Color {
+        Color(UIColor { traitCollection in
+            if traitCollection.userInterfaceStyle == .dark {
+                return UIColor.systemGray5 // más oscuro para mejorar el contraste en modo oscuro
+            } else {
+                return UIColor.systemGray6
+            }
+        })
+    }
 
     var body: some View {
         ZStack {
-            // Fondo general
+            // Fondo general adaptable a dark/light mode
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea()
             
@@ -32,14 +51,14 @@ struct LoginView: View {
                     
                     TextField("Username", text: $viewModel.username)
                         .padding()
-                        .background(Color(UIColor.systemGray6))
+                        .background(textFieldBackground)
                         .cornerRadius(8)
                         .disableAutocorrection(true)
                         .autocapitalization(.none)
                     
                     SecureField("Password", text: $viewModel.password)
                         .padding()
-                        .background(Color(UIColor.systemGray6))
+                        .background(textFieldBackground)
                         .cornerRadius(8)
                     
                     if let errorMessage = viewModel.errorMessage {
@@ -49,11 +68,11 @@ struct LoginView: View {
                             .padding(.top, 5)
                     }
                     
-                    Button(action: {
+                    Button {
                         Task {
                             await viewModel.login()
                         }
-                    }) {
+                    } label: {
                         Text("Login")
                             .font(.headline)
                             .foregroundColor(.white)
@@ -64,7 +83,7 @@ struct LoginView: View {
                     }
                 }
                 .padding()
-                .background(Color.white)
+                .background(formBackground)
                 .cornerRadius(12)
                 .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
                 .padding(.horizontal, 20)

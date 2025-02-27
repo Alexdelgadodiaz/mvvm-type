@@ -5,7 +5,6 @@
 //  Created by AlexDelgado on 27/2/25.
 //
 
-
 import SwiftUI
 
 struct ItemListView: View {
@@ -13,14 +12,12 @@ struct ItemListView: View {
     @EnvironmentObject var container: AppDependencyContainer
     
     @StateObject private var viewModel = ItemListViewModel()
-    
     @State private var isSheetPresented = false
-
 
     var body: some View {
         NavigationStack {
             ZStack {
-                // Fondo moderno
+                // Fondo que se adapta a dark y light mode
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea()
                 
@@ -42,7 +39,8 @@ struct ItemListView: View {
                                 }
                                 .padding()
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                .background(Color.white)
+                                // Se usa un color de fondo que se adapta a ambos modos
+                                .background(Color(UIColor.secondarySystemBackground))
                                 .cornerRadius(12)
                                 .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
                             }
@@ -67,8 +65,9 @@ struct ItemListView: View {
                 SheetView(isShowingSheet: $isSheetPresented) {
                     viewModel.logout()
                 }
+                // El sheet ocupará el 30% de la pantalla
                 .presentationDetents([.fraction(0.3)])
-                .presentationDragIndicator(.visible) // Muestra el indicador de arrastre
+                .presentationDragIndicator(.visible)
             }
             .onAppear {
                 viewModel.configure(itemService: container.itemService, userSession: userSession)
@@ -77,21 +76,16 @@ struct ItemListView: View {
                 }
             }
         }
-
-
     }
 }
 
-
-
 struct SheetView: View {
-    @Binding var isShowingSheet: Bool // Binding para controlar la visibilidad del Sheet
+    @Binding var isShowingSheet: Bool // Controla la visibilidad del sheet
     let logoutAction: () -> Void
 
     var body: some View {
         NavigationStack {
             VStack(spacing: 16) {
-                
                 Button("Logout") {
                     logoutAction()
                     isShowingSheet = false
@@ -99,7 +93,8 @@ struct SheetView: View {
                 .foregroundColor(.red)
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(Color(UIColor.systemGray6))
+                // Color de fondo adaptable a dark/light mode
+                .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(8)
                 
                 Button("Cancel") {
@@ -107,12 +102,10 @@ struct SheetView: View {
                 }
                 .padding()
                 .frame(maxWidth: .infinity)
-                .background(Color(UIColor.systemGray6))
+                .background(Color(UIColor.secondarySystemBackground))
                 .cornerRadius(8)
             }
             .padding()
-
         }
     }
 }
-
