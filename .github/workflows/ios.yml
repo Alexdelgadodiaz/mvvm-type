@@ -15,9 +15,11 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Select Xcode 16.2
-        run: |
-          xcode-select -switch /Applications/Xcode_16.2.app
+      - name: Use Xcode 16.2
+        run: sudo xcode-select -switch /Applications/Xcode_16.2.app
+
+      - name: Verify Xcode Version After Switch
+        run: xcodebuild -versio
 
           
       - name: Install Bundler and Fastlane
