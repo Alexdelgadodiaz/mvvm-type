@@ -39,6 +39,8 @@ This is an iOS application using the MVVM (Model-View-ViewModel) architecture. T
    ```
 2. Open the `.xcworkspace` in Xcode.
 3. Run the project on the simulator or a real device.
+4. Mock user --> "test": "pass"
+
 
 ## Features
 - MVVM Architecture

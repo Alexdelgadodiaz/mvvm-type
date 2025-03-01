@@ -39,5 +39,8 @@ struct ItemDetailView: View {
             }
         }
         .navigationTitle("Item Details")
+        .accessibilityIdentifier("ItemDetailView")
+
     }
+
 }

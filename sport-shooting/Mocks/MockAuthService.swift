@@ -8,19 +8,38 @@
 
 import Foundation
 
+enum AuthError: Error, LocalizedError {
+    case invalidCredentials
+    case userNotFound
+    
+    var errorDescription: String? {
+        switch self {
+        case .invalidCredentials:
+            return "Invalid username or password."
+        case .userNotFound:
+            return "User not found."
+        }
+    }
+}
+
 final class MockAuthService: AuthServiceProtocol {
-    var shouldReturnError = false
-    var mockUser = User(username: "test", token: "test")
+    private let validUsers: [String: String] = [
+        "test": "pass"
+    ]
+    
+    var mockUser: User?
 
     func login(username: String, password: String) async throws -> User {
-        if shouldReturnError {
-            throw NSError(domain: "MockAuthError", code: 401, userInfo: [NSLocalizedDescriptionKey: "Invalid credentials"])
+        guard let storedPassword = validUsers[username] else {
+            throw AuthError.userNotFound
+        }
+        
+        guard storedPassword == password else {
+            throw AuthError.invalidCredentials
         }
 
-//        guard let user = mockUser else {
-//            throw NSError(domain: "MockAuthError", code: 500, userInfo: [NSLocalizedDescriptionKey: "No mock user provided"])
-//        }
-
-        return mockUser
+        let user = User(username: username, token: "mock_token_\(UUID().uuidString)")
+        self.mockUser = user
+        return user
     }
 }

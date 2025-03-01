@@ -30,36 +30,31 @@ final class LoginViewModelTests: XCTestCase {
     }
 
     func testLoginSuccess() async throws {
-        // Preparamos el mock
-        mockAuthService.mockUser = User(username: "test", token: "test")
-
-        // Configuramos las entradas
+        // Configuramos credenciales correctas
         viewModel.username = "test"
-        viewModel.password = "test"
+        viewModel.password = "pass"
 
         // Ejecutamos el login
         await viewModel.login()
 
-        print(viewModel.username)
-        // Verificamos los resultados
+        print("Username after login: \(String(describing: userSession.currentUser?.username))")
+
+        // Verificamos que el usuario está autenticado correctamente
         XCTAssertEqual(userSession.currentUser?.username, "test")
         XCTAssertTrue(userSession.isLoggedIn)
         XCTAssertNil(viewModel.errorMessage)
     }
 
     func testLoginFailure() async throws {
-        // Forzamos un error
-        mockAuthService.shouldReturnError = true
 
-        // Configuramos las entradas
         viewModel.username = "test"
         viewModel.password = "wrongPassword"
 
-        // Ejecutamos el login
         await viewModel.login()
 
-        // Verificamos los resultados
         XCTAssertFalse(userSession.isLoggedIn)
+
         XCTAssertNotNil(viewModel.errorMessage)
+        XCTAssertEqual(viewModel.errorMessage, AuthError.invalidCredentials.localizedDescription)
     }
 }

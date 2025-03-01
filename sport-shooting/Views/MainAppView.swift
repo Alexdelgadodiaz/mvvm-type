@@ -25,5 +25,7 @@ struct MainAppView: View {
                     .environmentObject(userSession)
             }
         }
+        .accessibilityIdentifier("MainAppView")
+
     }
 }

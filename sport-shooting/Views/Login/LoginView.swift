@@ -90,6 +90,7 @@ struct LoginView: View {
                 
                 Spacer()
             }
+            .accessibilityIdentifier("LoginView")
             .onAppear {
                 viewModel.configure(authService: container.authService, userSession: userSession)
             }

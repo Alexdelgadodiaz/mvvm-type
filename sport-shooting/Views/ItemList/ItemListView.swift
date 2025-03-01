@@ -47,10 +47,12 @@ struct ItemListView: View {
                             .padding(.horizontal)
                         }
                     }
+                    .accessibilityIdentifier("ItemScrollView")
                     .padding(.vertical)
                 }
             }
             .navigationTitle("Items")
+            .accessibilityIdentifier("ItemsScrollView")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
