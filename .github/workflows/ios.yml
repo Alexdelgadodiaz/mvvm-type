@@ -17,11 +17,8 @@ jobs:
 
       - name: Select Xcode 16.2
         run: |
-          sudo xcode-select -switch /Applications/Xcode_16.2.app
-          xcrun simctl list devices
-      
-      - name: Install iOS 18.2 Simulator SDK
-        run: sudo softwareupdate --install "iOS 18.2 Simulator"
+          xcode-select -switch /Applications/Xcode_16.2.app
+
           
       - name: Install Bundler and Fastlane
         run: |
