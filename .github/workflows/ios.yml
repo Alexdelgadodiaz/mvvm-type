@@ -19,7 +19,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode_16.2.app
 
       - name: Verify Xcode Version After Switch
-        run: xcodebuild -versio
+        run: xcodebuild -version
 
           
       - name: Install Bundler and Fastlane
