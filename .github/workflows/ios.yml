@@ -1,4 +1,4 @@
-name: iOS Test Workflow
+name: iOS Tests with Fastlane
 
 on:
   push:
@@ -8,60 +8,21 @@ on:
 
 jobs:
   test:
-    name: Run Unit and UI Tests using iPhone simulator
+    name: Run Tests using Fastlane
     runs-on: macos-latest
 
     steps:
-      - name: Select Xcode 15
-        run: sudo xcode-select -switch /Applications/Xcode_15.0.app
-      
       - name: Checkout Repository
         uses: actions/checkout@v4
-      
-      - name: Verify Git Status and Conflicts
+
+      - name: Select Xcode 15
+        run: sudo xcode-select -switch /Applications/Xcode_15.0.app
+
+      - name: Install Bundler and Fastlane
         run: |
-          git status
-          if git ls-files -u | grep -q .; then
-            echo "Error: Unresolved merge conflicts detected."
-            exit 1
-          fi
-      
-      - name: Clean Derived Data and Caches
-        run: |
-          rm -rf ~/Library/Developer/Xcode/DerivedData
-          rm -rf ~/Library/Caches/com.apple.dt.Xcode
-          rm -rf ~/Library/Application\ Support/Xcode
-      
-      - name: Verify Project Integrity
-        run: |
-          if [ ! -d "sport-shooting.xcodeproj" ]; then
-            echo "Error: Project file is missing or corrupt."
-            exit 1
-          fi
-      
-      - name: Reset Git State (Ensure Clean Repo)
-        run: |
-          git reset --hard
-          git clean -fdx
-      
-      - name: Set Default Scheme
-        run: |
-          scheme_list=$(xcodebuild -list -json | tr -d "\n")
-          default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-          echo $default | cat >default
-          echo Using default scheme: $default
-      
-      - name: Verify Xcode Project Accessibility
-        run: |
-          xcodebuild -list || { echo "Error: Xcode project cannot be read"; exit 1; }
-      
-      - name: Run Tests
-        env:
-          scheme: ${{ 'default' }}
-          platform: ${{ 'iOS Simulator' }}
-        run: |
-          device=`xcrun xctrace list devices 2>&1 | grep -oE 'iPhone.*?[^\(]+' | head -1 | awk '{$1=$1;print}' | sed -e "s/ Simulator$//"`
-          if [ $scheme = default ]; then scheme=$(cat default); fi
-          if [ "`ls -A | grep -i \.xcworkspace$`" ]; then filetype_parameter="workspace" && file_to_build="`ls -A | grep -i \.xcworkspace$`"; else filetype_parameter="project" && file_to_build="`ls -A | grep -i \.xcodeproj$`"; fi
-          file_to_build=`echo $file_to_build | awk '{$1=$1;print}'`
-          xcodebuild test -scheme "$scheme" -"$filetype_parameter" "$file_to_build" -destination "platform=$platform,name=$device"
+          gem install bundler
+          bundle install
+          gem install fastlane
+
+      - name: Run Tests with Fastlane
+        run: fastlane tests
