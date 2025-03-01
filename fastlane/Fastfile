@@ -22,7 +22,7 @@ platform :ios do
       project: "sport-shooting.xcodeproj",
       scheme: "sport-shooting",
       clean: false,
-      devices: ["iPhone 16"],
+      devices: ["iPhone 16", "iPhone 16 Pro"],
       fail_build: true,
       force_quit_simulator: true,
       destination: "platform=iOS Simulator,name=iPhone 16,OS=latest"	
