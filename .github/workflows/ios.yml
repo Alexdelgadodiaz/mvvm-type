@@ -15,8 +15,34 @@ jobs:
       - name: Select Xcode 15
         run: sudo xcode-select -switch /Applications/Xcode_15.0.app
       
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
+      
+      - name: Verify Git Status and Conflicts
+        run: |
+          git status
+          if git ls-files -u | grep -q .; then
+            echo "Error: Unresolved merge conflicts detected."
+            exit 1
+          fi
+      
+      - name: Clean Derived Data and Caches
+        run: |
+          rm -rf ~/Library/Developer/Xcode/DerivedData
+          rm -rf ~/Library/Caches/com.apple.dt.Xcode
+          rm -rf ~/Library/Application\ Support/Xcode
+      
+      - name: Verify Project Integrity
+        run: |
+          if [ ! -d "sport-shooting.xcodeproj" ]; then
+            echo "Error: Project file is missing or corrupt."
+            exit 1
+          fi
+      
+      - name: Reset Git State (Ensure Clean Repo)
+        run: |
+          git reset --hard
+          git clean -fdx
       
       - name: Set Default Scheme
         run: |
@@ -24,6 +50,10 @@ jobs:
           default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
           echo $default | cat >default
           echo Using default scheme: $default
+      
+      - name: Verify Xcode Project Accessibility
+        run: |
+          xcodebuild -list || { echo "Error: Xcode project cannot be read"; exit 1; }
       
       - name: Run Tests
         env:
