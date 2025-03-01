@@ -21,7 +21,7 @@ platform :ios do
     scan(
       scheme: "sport-shooting", # Asegúrate de que el esquema existe en Xcode
       clean: true,
-      destination: "platform=iOS Simulator,name=iPhone 16,OS=18.3",
+      destination: "platform=iOS Simulator,name=iPhone 16,OS=18.0",
       fail_build: true
     )
   end
