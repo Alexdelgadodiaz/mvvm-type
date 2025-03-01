@@ -12,6 +12,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: Select Xcode 15
+        run: sudo xcode-select -switch /Applications/Xcode_15.0.app
+      
       - name: Checkout
         uses: actions/checkout@v4
       
