@@ -24,8 +24,7 @@ platform :ios do
       clean: false,
       devices: ["iPhone 16", "iPhone 16 Pro"],
       fail_build: true,
-      force_quit_simulator: true,
-      destination: "platform=iOS Simulator,name=iPhone 16,OS=18.3"	
+      force_quit_simulator: true
     )
   end
 end
