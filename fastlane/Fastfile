@@ -22,7 +22,7 @@ platform :ios do
     project: "sport-shooting.xcodeproj",
     scheme: "sport-shooting",
     clean: false,
-    device: "iPhone 14", # Usa un simulador más seguro que esté disponible
+    device: "iPhone 16", 
     fail_build: true,
     force_quit_simulator: true
   )
