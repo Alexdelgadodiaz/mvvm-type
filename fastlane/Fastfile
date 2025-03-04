@@ -19,12 +19,12 @@ platform :ios do
   desc "Run Unit and UI Tests"
   lane :tests do
     scan(
-      project: "sport-shooting.xcodeproj",
-      scheme: "sport-shooting",
-      clean: false,
-      devices: ["iPhone 16", "iPhone 16 Pro"],
-      fail_build: true,
-      force_quit_simulator: true
-    )
+    project: "sport-shooting.xcodeproj",
+    scheme: "sport-shooting",
+    clean: false,
+    device: "iPhone 14", # Usa un simulador más seguro que esté disponible
+    fail_build: true,
+    force_quit_simulator: true
+  )
   end
 end
