@@ -15,15 +15,18 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Use Xcode 16.2
-        run: sudo xcode-select -switch /Applications/Xcode_16.2.app
-
+      - name: Select Xcode 16.2
+        run: |
+          sudo xcode-select -switch /Applications/Xcode_16.2.app
+          
       - name: Verify Xcode Version After Switch
-        run: xcodebuild -version
+        run: |
+          xcodebuild -version
 
       - name: List Available Simulators
-        run: xcrun simctl list devices
-    
+        run: |
+          xcrun simctl list devices
+          
       - name: Install Bundler and Fastlane
         run: |
           gem install bundler
