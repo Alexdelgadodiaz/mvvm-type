@@ -7,53 +7,53 @@
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
-		D11074772D706D0E003D7881 /* PBXContainerItemProxy */ = {
+		D18E89422D72B96B0095C587 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D110745A2D706D0D003D7881 /* Project object */;
+			containerPortal = D18E89262D72B96A0095C587 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D11074612D706D0D003D7881;
+			remoteGlobalIDString = D18E892D2D72B96A0095C587;
 			remoteInfo = "sport-shooting";
 		};
-		D11074812D706D0E003D7881 /* PBXContainerItemProxy */ = {
+		D18E894C2D72B96B0095C587 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D110745A2D706D0D003D7881 /* Project object */;
+			containerPortal = D18E89262D72B96A0095C587 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = D11074612D706D0D003D7881;
+			remoteGlobalIDString = D18E892D2D72B96A0095C587;
 			remoteInfo = "sport-shooting";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D11074622D706D0D003D7881 /* sport-shooting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sport-shooting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D11074762D706D0E003D7881 /* sport-shootingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sport-shootingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D11074802D706D0E003D7881 /* sport-shootingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sport-shootingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D18E892E2D72B96A0095C587 /* sport-shooting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "sport-shooting.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D18E89412D72B96B0095C587 /* sport-shootingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sport-shootingTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D18E894B2D72B96B0095C587 /* sport-shootingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "sport-shootingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		D11074882D706D0E003D7881 /* Exceptions for "sport-shooting" folder in "sport-shooting" target */ = {
+		D13A5CED2D72BC3300DBB0BD /* Exceptions for "sport-shooting" folder in "sport-shooting" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
 			);
-			target = D11074612D706D0D003D7881 /* sport-shooting */;
+			target = D18E892D2D72B96A0095C587 /* sport-shooting */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		D11074642D706D0D003D7881 /* sport-shooting */ = {
+		D18E89302D72B96A0095C587 /* sport-shooting */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				D11074882D706D0E003D7881 /* Exceptions for "sport-shooting" folder in "sport-shooting" target */,
+				D13A5CED2D72BC3300DBB0BD /* Exceptions for "sport-shooting" folder in "sport-shooting" target */,
 			);
 			path = "sport-shooting";
 			sourceTree = "<group>";
 		};
-		D11074792D706D0E003D7881 /* sport-shootingTests */ = {
+		D18E89442D72B96B0095C587 /* sport-shootingTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "sport-shootingTests";
 			sourceTree = "<group>";
 		};
-		D11074832D706D0E003D7881 /* sport-shootingUITests */ = {
+		D18E894E2D72B96B0095C587 /* sport-shootingUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "sport-shootingUITests";
 			sourceTree = "<group>";
@@ -61,21 +61,21 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D110745F2D706D0D003D7881 /* Frameworks */ = {
+		D18E892B2D72B96A0095C587 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D11074732D706D0E003D7881 /* Frameworks */ = {
+		D18E893E2D72B96B0095C587 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D110747D2D706D0E003D7881 /* Frameworks */ = {
+		D18E89482D72B96B0095C587 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,22 +85,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D11074592D706D0D003D7881 = {
+		D18E89252D72B96A0095C587 = {
 			isa = PBXGroup;
 			children = (
-				D11074642D706D0D003D7881 /* sport-shooting */,
-				D11074792D706D0E003D7881 /* sport-shootingTests */,
-				D11074832D706D0E003D7881 /* sport-shootingUITests */,
-				D11074632D706D0D003D7881 /* Products */,
+				D18E89302D72B96A0095C587 /* sport-shooting */,
+				D18E89442D72B96B0095C587 /* sport-shootingTests */,
+				D18E894E2D72B96B0095C587 /* sport-shootingUITests */,
+				D18E892F2D72B96A0095C587 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		D11074632D706D0D003D7881 /* Products */ = {
+		D18E892F2D72B96A0095C587 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D11074622D706D0D003D7881 /* sport-shooting.app */,
-				D11074762D706D0E003D7881 /* sport-shootingTests.xctest */,
-				D11074802D706D0E003D7881 /* sport-shootingUITests.xctest */,
+				D18E892E2D72B96A0095C587 /* sport-shooting.app */,
+				D18E89412D72B96B0095C587 /* sport-shootingTests.xctest */,
+				D18E894B2D72B96B0095C587 /* sport-shootingUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,134 +108,136 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D11074612D706D0D003D7881 /* sport-shooting */ = {
+		D18E892D2D72B96A0095C587 /* sport-shooting */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D11074892D706D0E003D7881 /* Build configuration list for PBXNativeTarget "sport-shooting" */;
+			buildConfigurationList = D18E89552D72B96B0095C587 /* Build configuration list for PBXNativeTarget "sport-shooting" */;
 			buildPhases = (
-				D110745E2D706D0D003D7881 /* Sources */,
-				D110745F2D706D0D003D7881 /* Frameworks */,
-				D11074602D706D0D003D7881 /* Resources */,
+				D18E892A2D72B96A0095C587 /* Sources */,
+				D18E892B2D72B96A0095C587 /* Frameworks */,
+				D18E892C2D72B96A0095C587 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				D11074642D706D0D003D7881 /* sport-shooting */,
+				D18E89302D72B96A0095C587 /* sport-shooting */,
 			);
 			name = "sport-shooting";
 			packageProductDependencies = (
 			);
 			productName = "sport-shooting";
-			productReference = D11074622D706D0D003D7881 /* sport-shooting.app */;
+			productReference = D18E892E2D72B96A0095C587 /* sport-shooting.app */;
 			productType = "com.apple.product-type.application";
 		};
-		D11074752D706D0E003D7881 /* sport-shootingTests */ = {
+		D18E89402D72B96B0095C587 /* sport-shootingTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D110748E2D706D0E003D7881 /* Build configuration list for PBXNativeTarget "sport-shootingTests" */;
+			buildConfigurationList = D18E89582D72B96B0095C587 /* Build configuration list for PBXNativeTarget "sport-shootingTests" */;
 			buildPhases = (
-				D11074722D706D0E003D7881 /* Sources */,
-				D11074732D706D0E003D7881 /* Frameworks */,
-				D11074742D706D0E003D7881 /* Resources */,
+				D18E893D2D72B96B0095C587 /* Sources */,
+				D18E893E2D72B96B0095C587 /* Frameworks */,
+				D18E893F2D72B96B0095C587 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D11074782D706D0E003D7881 /* PBXTargetDependency */,
+				D18E89432D72B96B0095C587 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D11074792D706D0E003D7881 /* sport-shootingTests */,
+				D18E89442D72B96B0095C587 /* sport-shootingTests */,
 			);
 			name = "sport-shootingTests";
 			packageProductDependencies = (
 			);
 			productName = "sport-shootingTests";
-			productReference = D11074762D706D0E003D7881 /* sport-shootingTests.xctest */;
+			productReference = D18E89412D72B96B0095C587 /* sport-shootingTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D110747F2D706D0E003D7881 /* sport-shootingUITests */ = {
+		D18E894A2D72B96B0095C587 /* sport-shootingUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D11074912D706D0E003D7881 /* Build configuration list for PBXNativeTarget "sport-shootingUITests" */;
+			buildConfigurationList = D18E895B2D72B96B0095C587 /* Build configuration list for PBXNativeTarget "sport-shootingUITests" */;
 			buildPhases = (
-				D110747C2D706D0E003D7881 /* Sources */,
-				D110747D2D706D0E003D7881 /* Frameworks */,
-				D110747E2D706D0E003D7881 /* Resources */,
+				D18E89472D72B96B0095C587 /* Sources */,
+				D18E89482D72B96B0095C587 /* Frameworks */,
+				D18E89492D72B96B0095C587 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D11074822D706D0E003D7881 /* PBXTargetDependency */,
+				D18E894D2D72B96B0095C587 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				D11074832D706D0E003D7881 /* sport-shootingUITests */,
+				D18E894E2D72B96B0095C587 /* sport-shootingUITests */,
 			);
 			name = "sport-shootingUITests";
 			packageProductDependencies = (
 			);
 			productName = "sport-shootingUITests";
-			productReference = D11074802D706D0E003D7881 /* sport-shootingUITests.xctest */;
+			productReference = D18E894B2D72B96B0095C587 /* sport-shootingUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D110745A2D706D0D003D7881 /* Project object */ = {
+		D18E89262D72B96A0095C587 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
-					D11074612D706D0D003D7881 = {
+					D18E892D2D72B96A0095C587 = {
 						CreatedOnToolsVersion = 16.2;
 					};
-					D11074752D706D0E003D7881 = {
+					D18E89402D72B96B0095C587 = {
 						CreatedOnToolsVersion = 16.2;
-						TestTargetID = D11074612D706D0D003D7881;
+						LastSwiftMigration = 1620;
+						TestTargetID = D18E892D2D72B96A0095C587;
 					};
-					D110747F2D706D0E003D7881 = {
+					D18E894A2D72B96B0095C587 = {
 						CreatedOnToolsVersion = 16.2;
-						TestTargetID = D11074612D706D0D003D7881;
+						LastSwiftMigration = 1620;
+						TestTargetID = D18E892D2D72B96A0095C587;
 					};
 				};
 			};
-			buildConfigurationList = D110745D2D706D0D003D7881 /* Build configuration list for PBXProject "sport-shooting" */;
+			buildConfigurationList = D18E89292D72B96A0095C587 /* Build configuration list for PBXProject "sport-shooting" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = D11074592D706D0D003D7881;
+			mainGroup = D18E89252D72B96A0095C587;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = D11074632D706D0D003D7881 /* Products */;
+			productRefGroup = D18E892F2D72B96A0095C587 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D11074612D706D0D003D7881 /* sport-shooting */,
-				D11074752D706D0E003D7881 /* sport-shootingTests */,
-				D110747F2D706D0E003D7881 /* sport-shootingUITests */,
+				D18E892D2D72B96A0095C587 /* sport-shooting */,
+				D18E89402D72B96B0095C587 /* sport-shootingTests */,
+				D18E894A2D72B96B0095C587 /* sport-shootingUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D11074602D706D0D003D7881 /* Resources */ = {
+		D18E892C2D72B96A0095C587 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D11074742D706D0E003D7881 /* Resources */ = {
+		D18E893F2D72B96B0095C587 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D110747E2D706D0E003D7881 /* Resources */ = {
+		D18E89492D72B96B0095C587 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,21 +247,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D110745E2D706D0D003D7881 /* Sources */ = {
+		D18E892A2D72B96A0095C587 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D11074722D706D0E003D7881 /* Sources */ = {
+		D18E893D2D72B96B0095C587 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D110747C2D706D0E003D7881 /* Sources */ = {
+		D18E89472D72B96B0095C587 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -269,106 +271,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		D11074782D706D0E003D7881 /* PBXTargetDependency */ = {
+		D18E89432D72B96B0095C587 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D11074612D706D0D003D7881 /* sport-shooting */;
-			targetProxy = D11074772D706D0E003D7881 /* PBXContainerItemProxy */;
+			target = D18E892D2D72B96A0095C587 /* sport-shooting */;
+			targetProxy = D18E89422D72B96B0095C587 /* PBXContainerItemProxy */;
 		};
-		D11074822D706D0E003D7881 /* PBXTargetDependency */ = {
+		D18E894D2D72B96B0095C587 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = D11074612D706D0D003D7881 /* sport-shooting */;
-			targetProxy = D11074812D706D0E003D7881 /* PBXContainerItemProxy */;
+			target = D18E892D2D72B96A0095C587 /* sport-shooting */;
+			targetProxy = D18E894C2D72B96B0095C587 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		D110748A2D706D0E003D7881 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "sport-shooting/sport_shooting.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"sport-shooting/Preview Content\"";
-				DEVELOPMENT_TEAM = 54B96T6J84;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "sport-shooting/Info.plist";
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.add.testing.sport-shooting";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Debug;
-		};
-		D110748B2D706D0E003D7881 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "sport-shooting/sport_shooting.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"sport-shooting/Preview Content\"";
-				DEVELOPMENT_TEAM = 54B96T6J84;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "sport-shooting/Info.plist";
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.add.testing.sport-shooting";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
-				XROS_DEPLOYMENT_TARGET = 2.2;
-			};
-			name = Release;
-		};
-		D110748C2D706D0E003D7881 /* Debug */ = {
+		D18E89532D72B96B0095C587 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -424,13 +340,12 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		D110748D2D706D0E003D7881 /* Release */ = {
+		D18E89542D72B96B0095C587 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -479,15 +394,93 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
-		D110748F2D706D0E003D7881 /* Debug */ = {
+		D18E89562D72B96B0095C587 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "sport-shooting/sport_shooting.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"sport-shooting/Preview Content\"";
+				DEVELOPMENT_TEAM = 54B96T6J84;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.add.testing.sport-shooting";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		D18E89572D72B96B0095C587 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "sport-shooting/sport_shooting.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"sport-shooting/Preview Content\"";
+				DEVELOPMENT_TEAM = 54B96T6J84;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.add.testing.sport-shooting";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		D18E89592D72B96B0095C587 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54B96T6J84;
@@ -497,23 +490,22 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.add.testing.sport-shootingTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,7";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sport-shooting.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sport-shooting";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
-		D11074902D706D0E003D7881 /* Release */ = {
+		D18E895A2D72B96B0095C587 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54B96T6J84;
@@ -523,22 +515,20 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.add.testing.sport-shootingTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,7";
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/sport-shooting.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/sport-shooting";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
-		D11074922D706D0E003D7881 /* Debug */ = {
+		D18E895C2D72B96B0095C587 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54B96T6J84;
@@ -548,22 +538,21 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.add.testing.sport-shootingUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_TARGET_NAME = "sport-shooting";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Debug;
 		};
-		D11074932D706D0E003D7881 /* Release */ = {
+		D18E895D2D72B96B0095C587 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 54B96T6J84;
@@ -573,14 +562,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.add.testing.sport-shootingUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
 				TEST_TARGET_NAME = "sport-shooting";
 				XROS_DEPLOYMENT_TARGET = 2.2;
 			};
@@ -589,43 +575,43 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D110745D2D706D0D003D7881 /* Build configuration list for PBXProject "sport-shooting" */ = {
+		D18E89292D72B96A0095C587 /* Build configuration list for PBXProject "sport-shooting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D110748C2D706D0E003D7881 /* Debug */,
-				D110748D2D706D0E003D7881 /* Release */,
+				D18E89532D72B96B0095C587 /* Debug */,
+				D18E89542D72B96B0095C587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D11074892D706D0E003D7881 /* Build configuration list for PBXNativeTarget "sport-shooting" */ = {
+		D18E89552D72B96B0095C587 /* Build configuration list for PBXNativeTarget "sport-shooting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D110748A2D706D0E003D7881 /* Debug */,
-				D110748B2D706D0E003D7881 /* Release */,
+				D18E89562D72B96B0095C587 /* Debug */,
+				D18E89572D72B96B0095C587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D110748E2D706D0E003D7881 /* Build configuration list for PBXNativeTarget "sport-shootingTests" */ = {
+		D18E89582D72B96B0095C587 /* Build configuration list for PBXNativeTarget "sport-shootingTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D110748F2D706D0E003D7881 /* Debug */,
-				D11074902D706D0E003D7881 /* Release */,
+				D18E89592D72B96B0095C587 /* Debug */,
+				D18E895A2D72B96B0095C587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D11074912D706D0E003D7881 /* Build configuration list for PBXNativeTarget "sport-shootingUITests" */ = {
+		D18E895B2D72B96B0095C587 /* Build configuration list for PBXNativeTarget "sport-shootingUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D11074922D706D0E003D7881 /* Debug */,
-				D11074932D706D0E003D7881 /* Release */,
+				D18E895C2D72B96B0095C587 /* Debug */,
+				D18E895D2D72B96B0095C587 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D110745A2D706D0D003D7881 /* Project object */;
+	rootObject = D18E89262D72B96A0095C587 /* Project object */;
 }
