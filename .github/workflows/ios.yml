@@ -18,6 +18,9 @@ jobs:
       - name: Select Xcode 16.2
         run: |
           sudo xcode-select -switch /Applications/Xcode_16.2.app
+
+      - name: List Available Simulators
+        run: |
           xcrun simctl list devices
           
       - name: Install Bundler and Fastlane
