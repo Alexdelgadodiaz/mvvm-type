@@ -69,6 +69,10 @@ final class URLSessionNetworkClient: NetworkClient {
         guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
             throw URLError(.badServerResponse)
         }
+        
+        if let jsonString = String(data: data, encoding: .utf8) {
+            print("Respuesta del servidor: \(jsonString)")
+        }
 
         return try JSONDecoder().decode(T.self, from: data)
     }

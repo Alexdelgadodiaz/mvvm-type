@@ -15,12 +15,13 @@ final class AuthService: AuthServiceProtocol {
         self.networkClient = networkClient
     }
 
-    func login(username: String, password: String) async throws -> User {
-        let body = ["username": username, "password": password]
+    func login(email: String, password: String) async throws -> User {
+
+        let body = ["email": email, "password": password]
         let bodyData = try JSONEncoder().encode(body)
 
         let user: User = try await networkClient.request(
-            endpoint: "/login",
+            endpoint: "/api/login",
             method: .post,
             headers: ["Content-Type": "application/json"],
             body: bodyData

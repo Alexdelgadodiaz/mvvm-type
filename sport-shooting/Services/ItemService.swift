@@ -8,40 +8,44 @@
 
 import Foundation
 
+struct Response: Decodable {
+    let message: String
+    let items: [Item]
+    let token: String
+}
+
 final class ItemService: ItemServiceProtocol {
+
     private let networkClient: NetworkClient
-
-    init(networkClient: NetworkClient) {
+    private let token: String
+    
+    init(networkClient: NetworkClient, token: String) {
         self.networkClient = networkClient
+        self.token = token
     }
+    
+    func fetchItems(token: String?) async throws -> [Item] {
+        // Asegurarse de que el token no sea nulo
+        guard let token = token, !token.isEmpty else {
+            throw URLError(.userAuthenticationRequired)
+        }
 
-    func fetchItems() async throws -> [Item] {
-        return try await networkClient.request(
-            endpoint: "/items",
+        let headers = [
+            "Content-Type": "application/json",
+            "Authorization": "Bearer \(token)"
+        ]
+        
+        // Aquí obtienes los datos crudos de la respuesta
+        let response: Response = try await networkClient.request(
+            endpoint: "/api/items",
             method: .get,
-            headers: nil,
+            headers: headers,
             body: nil
         )
+        
+        // Devuelve solo el array de items
+        return response.items
     }
+    
 
-    func addItem(title: String, description: String) async throws {
-        let body = ["title": title, "description": description]
-        let bodyData = try JSONEncoder().encode(body)
-
-        let _: Item = try await networkClient.request(
-            endpoint: "/items",
-            method: .post,
-            headers: ["Content-Type": "application/json"],
-            body: bodyData
-        )
-    }
-
-    func deleteItem(item: Item) async throws {
-        let _: Item = try await networkClient.request(
-            endpoint: "/items/\(item.id)",
-            method: .delete,
-            headers: nil,
-            body: nil
-        )
-    }
 }

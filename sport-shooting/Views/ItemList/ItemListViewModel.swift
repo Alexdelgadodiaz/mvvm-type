@@ -24,18 +24,29 @@ final class ItemListViewModel: ObservableObject {
     }
     
     func fetchItems() async {
+        // Asegurarse de que el usuario esté autenticado y tenga un token válido
+        guard let token = userSession.currentUser?.token else {
+            await MainActor.run {
+                self.errorMessage = "User is not authenticated."
+                userSession.logoutUser()
+            }
+            return
+        }
         
         do {
-            let fetchedItems = try await itemService.fetchItems()
+            // Pasar el token al servicio de ítems si es necesario
+            let fetchedItems = try await itemService.fetchItems(token: token)
+            
+            print(fetchedItems.first!)
+            
             await MainActor.run {
                 self.items = fetchedItems
+                self.errorMessage = nil
             }
         } catch {
             await MainActor.run {
                 self.errorMessage = "Error fetching items: \(error.localizedDescription)"
-
             }
         }
-        
     }
 }

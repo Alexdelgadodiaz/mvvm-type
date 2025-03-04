@@ -7,7 +7,5 @@
 
 
 protocol ItemServiceProtocol {
-    func fetchItems() async throws -> [Item]
-    func addItem(title: String, description: String) async throws
-    func deleteItem(item: Item) async throws
+    func fetchItems(token: String?) async throws -> [Item]
 }
