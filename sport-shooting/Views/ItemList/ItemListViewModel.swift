@@ -10,6 +10,7 @@ import SwiftUI
 final class ItemListViewModel: ObservableObject {
     @Published var items: [Item] = []
     @Published var errorMessage: String?
+    @Published var isLoading: Bool = false
 
     var itemService: ItemServiceProtocol!
     var userSession: UserSession!
@@ -24,7 +25,6 @@ final class ItemListViewModel: ObservableObject {
     }
     
     func fetchItems() async {
-        // Asegurarse de que el usuario esté autenticado y tenga un token válido
         guard let token = userSession.currentUser?.token else {
             await MainActor.run {
                 self.errorMessage = "User is not authenticated."
@@ -33,19 +33,19 @@ final class ItemListViewModel: ObservableObject {
             return
         }
         
+        await MainActor.run { self.isLoading = true }
+        
         do {
-            // Pasar el token al servicio de ítems si es necesario
             let fetchedItems = try await itemService.fetchItems(token: token)
-            
-            print(fetchedItems.first!)
-            
             await MainActor.run {
                 self.items = fetchedItems
                 self.errorMessage = nil
+                self.isLoading = false
             }
         } catch {
             await MainActor.run {
                 self.errorMessage = "Error fetching items: \(error.localizedDescription)"
+                self.isLoading = false 
             }
         }
     }
