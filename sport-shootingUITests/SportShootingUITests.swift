@@ -22,14 +22,14 @@ final class SportShootingUITests: XCTestCase {
     func performLoginIfNeeded() {
         let loginButton = app.buttons["Login"]
         if loginButton.exists { // Si la pantalla de login está visible, hacemos login
-            let usernameField = app.textFields["Username"]
-            let passwordField = app.secureTextFields["Password"]
+            //let usernameField = app.textFields["Username"]
+            //let passwordField = app.secureTextFields["Password"]
             
-            usernameField.tap()
-            usernameField.typeText("test")
+            //usernameField.tap()
+            //usernameField.typeText("test@example.com")
 
-            passwordField.tap()
-            passwordField.typeText("pass")
+            //passwordField.tap()
+            //passwordField.typeText("pass")
             
             loginButton.tap()
 

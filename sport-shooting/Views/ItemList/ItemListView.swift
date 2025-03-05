@@ -72,7 +72,7 @@ struct ItemListView: View {
                 .presentationDragIndicator(.visible)
             }
             .onAppear {
-                viewModel.configure(itemService: container.itemService, userSession: userSession)
+                viewModel.configure(itemService: container.itemService(token: userSession.currentUser?.token), userSession: userSession)
                 Task {
                     await viewModel.fetchItems()
                 }

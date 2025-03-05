@@ -15,7 +15,7 @@ enum AuthError: Error, LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidCredentials:
-            return "Invalid username or password."
+            return "Invalid email or password."
         case .userNotFound:
             return "User not found."
         }
@@ -23,22 +23,31 @@ enum AuthError: Error, LocalizedError {
 }
 
 final class MockAuthService: AuthServiceProtocol {
-    private let validUsers: [String: String] = [
-        "test": "pass"
+    // Simulamos un diccionario de usuarios válidos con sus datos
+    private let validUsers: [String: (password: String, name: String, role: String, isActive: Bool, isPremium: Bool)] = [
+        "test@example.com": (password: "pass", name: "Test User", role: "user", isActive: true, isPremium: false),
+        "admin@example.com": (password: "adminpass", name: "Admin User", role: "admin", isActive: true, isPremium: true)
     ]
     
     var mockUser: User?
 
-    func login(username: String, password: String) async throws -> User {
-        guard let storedPassword = validUsers[username] else {
+    func login(email: String, password: String) async throws -> User {
+        guard let storedData = validUsers[email] else {
             throw AuthError.userNotFound
         }
         
-        guard storedPassword == password else {
+        guard storedData.password == password else {
             throw AuthError.invalidCredentials
         }
 
-        let user = User(username: username, token: "mock_token_\(UUID().uuidString)")
+        let user = User(
+            name: storedData.name,
+            email: email,
+            role: storedData.role,
+            isActive: storedData.isActive,
+            isPremium: storedData.isPremium,
+            token: "mock_token_\(UUID().uuidString)"
+        )
         self.mockUser = user
         return user
     }

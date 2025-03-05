@@ -8,6 +8,7 @@ import SwiftUI
 
 enum Environment {
     case production
+    case staging
     case mock
 }
 
@@ -15,29 +16,43 @@ final class AppDependencyContainer: ObservableObject {
     static let shared = AppDependencyContainer()
 
     private let environment: Environment
+    private let serviceBuilder: ServiceBuilder
 
-    private let networkClient: NetworkClient
-    //Para avanzar con mocks seteamos .mock
-    init(environment: Environment = .mock) {
+    private init() {
+        #if DEBUG
+        let environment: Environment = .mock
+        #elseif RELEASE
+        let environment: Environment = .production
+        #else
+        let environment: Environment = .staging
+        #endif
+
         self.environment = environment
-        self.networkClient = URLSessionNetworkClient(baseURL: "https://api.example.com")
+        let baseURL = AppDependencyContainer.baseURL(for: environment)
+        let networkClient = URLSessionNetworkClient(baseURL: baseURL)
+        self.serviceBuilder = ServiceBuilder(environment: environment, networkClient: networkClient)
     }
 
-    var authService: AuthServiceProtocol {
+    private static func baseURL(for environment: Environment) -> String {
         switch environment {
         case .production:
-            return AuthService(networkClient: networkClient)
+            return "http://localhost:3000"
+        case .staging:
+            return "http://localhost:3000"
         case .mock:
-            return MockAuthService()
+            return "local"
         }
     }
 
-    var itemService: ItemServiceProtocol {
-        switch environment {
-        case .production:
-            return ItemService(networkClient: networkClient)
-        case .mock:
-            return MockItemService()
-        }
+    func authService() -> AuthServiceProtocol {
+        return serviceBuilder.buildAuthService()
     }
+
+    func itemService(token: String?) -> ItemServiceProtocol {
+        return serviceBuilder.buildItemService(token: token)
+    }
+    
 }
+
+
+

@@ -49,7 +49,7 @@ struct LoginView: View {
                         .fontWeight(.bold)
                         .padding(.bottom, 10)
                     
-                    TextField("Username", text: $viewModel.username)
+                    TextField("Username", text: $viewModel.email)
                         .padding()
                         .background(textFieldBackground)
                         .cornerRadius(8)
@@ -92,7 +92,7 @@ struct LoginView: View {
             }
             .accessibilityIdentifier("LoginView")
             .onAppear {
-                viewModel.configure(authService: container.authService, userSession: userSession)
+                viewModel.configure(authService: container.authService(), userSession: userSession)
             }
         }
     }

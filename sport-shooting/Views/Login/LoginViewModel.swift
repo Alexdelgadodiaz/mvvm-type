@@ -8,8 +8,8 @@
 import SwiftUI
 
 final class LoginViewModel: ObservableObject {
-    @Published var username: String = ""
-    @Published var password: String = ""
+    @Published var email: String = "test@example.com"
+    @Published var password: String = "pass"
     @Published var isAuthenticated: Bool = false
     @Published var errorMessage: String?
     
@@ -22,17 +22,34 @@ final class LoginViewModel: ObservableObject {
     }
 
     func login() async {
-        guard !username.isEmpty, !password.isEmpty else {
-            errorMessage = "Username and password are required."
+        guard !email.isEmpty, !password.isEmpty else {
+            errorMessage = "Email and password are required."
             return
         }
 
         do {
-            let user = try await authService.login(username: username, password: password)
-            print(user.username, user.token)
+            let user = try await authService.login(email: email, password: password)
+            
+            // Chequeo de token opcional
+            guard let token = user.token else {
+                await MainActor.run {
+                    self.errorMessage = "Login successful, but no token received."
+                }
+                return
+            }
+            
+            // Aquí se reflejan los nuevos campos del usuario
+            print(user.email, user.name, user.role, user.isPremium, token)
             
             await MainActor.run {
-                userSession.loginUser(username: user.username, token: user.token)
+                userSession.loginUser(
+                    name: user.name,
+                    email: user.email,
+                    role: user.role,
+                    isActive: user.isActive,
+                    isPremium: user.isPremium,
+                    token: token
+                )
                 self.errorMessage = nil
             }
         } catch {

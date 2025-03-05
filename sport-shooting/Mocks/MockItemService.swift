@@ -9,31 +9,25 @@
 import Foundation
 
 final class MockItemService: ItemServiceProtocol {
+
+    
     var shouldReturnError = false
-    var mockItems: [Item] = [
-        Item(title: "Mock Item 1", itemDescription: "Description 1"),
-        Item(title: "Mock Item 2", itemDescription: "Description 2")
-    ]
-
-    func fetchItems() async throws -> [Item] {
+    
+    private let mockItemsResponse = ItemsResponse(
+        message: "Ítems recuperados con éxito",
+        items: [
+            Item(title: "Mock Item 1", itemDescription: "Description 1", isPremium: false, type: "free"),
+            Item(title: "Mock Item 2", itemDescription: "Description 2", isPremium: true, type: "premium")
+        ],
+        token: "mock_token"
+    )
+    
+    
+    func fetchItems(token: String?) async throws -> [Item] {
         if shouldReturnError {
             throw NSError(domain: "MockItemServiceError", code: 500, userInfo: nil)
         }
-        return mockItems
+        return mockItemsResponse.items
     }
 
-    func addItem(title: String, description: String) async throws {
-        if shouldReturnError {
-            throw NSError(domain: "MockItemServiceError", code: 500, userInfo: nil)
-        }
-        let newItem = Item(title: title, itemDescription: description)
-        mockItems.append(newItem)
-    }
-
-    func deleteItem(item: Item) async throws {
-        if shouldReturnError {
-            throw NSError(domain: "MockItemServiceError", code: 500, userInfo: nil)
-        }
-        mockItems.removeAll { $0 === item }
-    }
 }
