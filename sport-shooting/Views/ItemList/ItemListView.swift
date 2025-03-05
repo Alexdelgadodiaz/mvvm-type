@@ -17,38 +17,43 @@ struct ItemListView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // Fondo que se adapta a dark y light mode
                 Color(UIColor.systemGroupedBackground)
                     .ignoresSafeArea()
                 
-                ScrollView {
-                    VStack(spacing: 16) {
-                        ForEach(viewModel.items) { item in
-                            NavigationLink {
-                                ItemDetailView(item: item)
-                            } label: {
-                                VStack(alignment: .leading, spacing: 8) {
-                                    Text(item.title)
-                                        .font(.headline)
-                                        .foregroundColor(.primary)
-                                    
-                                    Text(item.itemDescription)
-                                        .font(.subheadline)
-                                        .foregroundColor(.secondary)
-                                        .lineLimit(2)
+                if viewModel.isLoading {
+                    ProgressView("Loading items...")
+                        .scaleEffect(1.5)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(Color.black.opacity(0.3))
+                        .ignoresSafeArea()
+                } else {
+                    ScrollView {
+                        VStack(spacing: 16) {
+                            ForEach(viewModel.items) { item in
+                                NavigationLink {
+                                    ItemDetailView(item: item)
+                                } label: {
+                                    VStack(alignment: .leading, spacing: 8) {
+                                        Text(item.title)
+                                            .font(.headline)
+                                            .foregroundColor(.primary)
+                                        
+                                        Text(item.itemDescription)
+                                            .font(.subheadline)
+                                            .foregroundColor(.secondary)
+                                            .lineLimit(2)
+                                    }
+                                    .padding()
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .background(Color(UIColor.secondarySystemBackground))
+                                    .cornerRadius(12)
+                                    .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
                                 }
-                                .padding()
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                // Se usa un color de fondo que se adapta a ambos modos
-                                .background(Color(UIColor.secondarySystemBackground))
-                                .cornerRadius(12)
-                                .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+                                .padding(.horizontal)
                             }
-                            .padding(.horizontal)
                         }
+                        .padding(.vertical)
                     }
-                    .accessibilityIdentifier("ItemScrollView")
-                    .padding(.vertical)
                 }
             }
             .navigationTitle("Items")
@@ -67,7 +72,6 @@ struct ItemListView: View {
                 SheetView(isShowingSheet: $isSheetPresented) {
                     viewModel.logout()
                 }
-                // El sheet ocupará el 30% de la pantalla
                 .presentationDetents([.fraction(0.3)])
                 .presentationDragIndicator(.visible)
             }

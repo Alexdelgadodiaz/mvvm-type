@@ -12,7 +12,8 @@ final class LoginViewModel: ObservableObject {
     @Published var password: String = "pass"
     @Published var isAuthenticated: Bool = false
     @Published var errorMessage: String?
-    
+    @Published var isLoading: Bool = false 
+
     var authService: AuthServiceProtocol!
     var userSession: UserSession!
     
@@ -26,19 +27,20 @@ final class LoginViewModel: ObservableObject {
             errorMessage = "Email and password are required."
             return
         }
+        
+        await MainActor.run { isLoading = true }
 
         do {
             let user = try await authService.login(email: email, password: password)
             
-            // Chequeo de token opcional
             guard let token = user.token else {
                 await MainActor.run {
                     self.errorMessage = "Login successful, but no token received."
+                    self.isLoading = false
                 }
                 return
             }
             
-            // Aquí se reflejan los nuevos campos del usuario
             print(user.email, user.name, user.role, user.isPremium, token)
             
             await MainActor.run {
@@ -51,10 +53,12 @@ final class LoginViewModel: ObservableObject {
                     token: token
                 )
                 self.errorMessage = nil
+                self.isLoading = false // Detener el indicador de carga al finalizar
             }
         } catch {
             await MainActor.run {
                 self.errorMessage = error.localizedDescription
+                self.isLoading = false // Detener el indicador de carga si ocurre un error
             }
         }
     }

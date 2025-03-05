@@ -39,61 +39,71 @@ struct LoginView: View {
             // Fondo general adaptable a dark/light mode
             Color(UIColor.systemGroupedBackground)
                 .ignoresSafeArea()
-            
-            VStack {
-                Spacer()
-                
-                VStack(spacing: 16) {
-                    Text("Login")
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
-                        .padding(.bottom, 10)
+
+            // Progreso de carga
+            if viewModel.isLoading {
+                ProgressView("Authenticating...") // Indicador de carga
+                    .scaleEffect(1.5)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(Color.black.opacity(0.3))
+                    .ignoresSafeArea()
+            } else {
+                VStack {
+                    Spacer()
                     
-                    TextField("Username", text: $viewModel.email)
-                        .padding()
-                        .background(textFieldBackground)
-                        .cornerRadius(8)
-                        .disableAutocorrection(true)
-                        .autocapitalization(.none)
-                    
-                    SecureField("Password", text: $viewModel.password)
-                        .padding()
-                        .background(textFieldBackground)
-                        .cornerRadius(8)
-                    
-                    if let errorMessage = viewModel.errorMessage {
-                        Text(errorMessage)
-                            .foregroundColor(.red)
-                            .font(.footnote)
-                            .padding(.top, 5)
-                    }
-                    
-                    Button {
-                        Task {
-                            await viewModel.login()
-                        }
-                    } label: {
+                    VStack(spacing: 16) {
                         Text("Login")
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .frame(maxWidth: .infinity)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 10)
+                        
+                        TextField("Username", text: $viewModel.email)
                             .padding()
-                            .background(Color.blue)
+                            .background(textFieldBackground)
                             .cornerRadius(8)
+                            .disableAutocorrection(true)
+                            .autocapitalization(.none)
+                        
+                        SecureField("Password", text: $viewModel.password)
+                            .padding()
+                            .background(textFieldBackground)
+                            .cornerRadius(8)
+                        
+                        if let errorMessage = viewModel.errorMessage {
+                            Text(errorMessage)
+                                .foregroundColor(.red)
+                                .font(.footnote)
+                                .padding(.top, 5)
+                        }
+                        
+                        Button {
+                            Task {
+                                await viewModel.login()
+                            }
+                        } label: {
+                            Text("Login")
+                                .font(.headline)
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(8)
+                        }
                     }
+                    .padding()
+                    .background(formBackground)
+                    .cornerRadius(12)
+                    .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
+                    .padding(.horizontal, 20)
+                    
+                    Spacer()
                 }
-                .padding()
-                .background(formBackground)
-                .cornerRadius(12)
-                .shadow(color: Color.black.opacity(0.1), radius: 8, x: 0, y: 4)
-                .padding(.horizontal, 20)
-                
-                Spacer()
+                .accessibilityIdentifier("LoginView")
+                .onAppear {
+                    viewModel.configure(authService: container.authService(), userSession: userSession)
+                }
             }
-            .accessibilityIdentifier("LoginView")
-            .onAppear {
-                viewModel.configure(authService: container.authService(), userSession: userSession)
-            }
+
         }
     }
 }
