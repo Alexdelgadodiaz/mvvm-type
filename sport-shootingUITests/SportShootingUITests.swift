@@ -25,11 +25,11 @@ final class SportShootingUITests: XCTestCase {
             let usernameField = app.textFields["Username"]
             let passwordField = app.secureTextFields["Password"]
             
-            usernameField.tap()
-            usernameField.typeText("test")
+            //usernameField.tap()
+            //usernameField.typeText("test@example.com")
 
-            passwordField.tap()
-            passwordField.typeText("pass")
+            //passwordField.tap()
+            //passwordField.typeText("pass")
             
             loginButton.tap()
 

@@ -30,13 +30,18 @@ final class ItemListViewModelTests: XCTestCase {
         super.tearDown()
     }
 
+    
     func testFetchItemsSuccess() async throws {
         // Preparamos los datos del mock
-        let mockItems = [
-            Item(title: "Test Item 1", itemDescription: "Description 1"),
-            Item(title: "Test Item 2", itemDescription: "Description 2")
-        ]
-        mockItemService.mockItems = mockItems
+        let mockItemsResponse = ItemsResponse(
+            message: "Ítems recuperados con éxito",
+            items: [
+                Item(title: "Test Item 1", itemDescription: "Description 1", isPremium: false, type: "free"),
+                Item(title: "Test Item 2", itemDescription: "Description 2", isPremium: true, type: "premium")
+            ],
+            token: "mock_token"
+        )
+        mockItemService.mockItems = mockItemsResponse.items
 
         // Ejecutamos la acción
         await viewModel.fetchItems()

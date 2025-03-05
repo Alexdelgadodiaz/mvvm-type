@@ -31,23 +31,23 @@ final class LoginViewModelTests: XCTestCase {
 
     func testLoginSuccess() async throws {
         // Configuramos credenciales correctas
-        viewModel.username = "test"
+        viewModel.email = "test@example.com"
         viewModel.password = "pass"
 
         // Ejecutamos el login
         await viewModel.login()
 
-        print("Username after login: \(String(describing: userSession.currentUser?.username))")
+        print("Username after login: \(String(describing: userSession.currentUser?.email))")
 
         // Verificamos que el usuario está autenticado correctamente
-        XCTAssertEqual(userSession.currentUser?.username, "test")
+        XCTAssertEqual(userSession.currentUser!.name, "Test User")
         XCTAssertTrue(userSession.isLoggedIn)
         XCTAssertNil(viewModel.errorMessage)
     }
 
     func testLoginFailure() async throws {
 
-        viewModel.username = "test"
+        viewModel.email = "test@example.com"
         viewModel.password = "wrongPassword"
 
         await viewModel.login()
